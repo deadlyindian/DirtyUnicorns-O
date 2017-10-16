@@ -12,6 +12,17 @@ LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 #######################################
+# init.d.rc
+include $(CLEAR_VARS)
+
+LOCAL_MODULE       := init.d.rc
+LOCAL_SRC_FILES    := $(LOCAL_MODULE)
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+
+include $(BUILD_PREBUILT)
+
+#######################################
 # init-debug.rc
 include $(CLEAR_VARS)
 
