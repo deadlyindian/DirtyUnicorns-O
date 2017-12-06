@@ -1378,6 +1378,10 @@ systemimage-crusher: $(INTERNAL_SYSTEMIMAGE_FILES)
 
 FULL_SYSTEMIMAGE_DEPS := $(INTERNAL_SYSTEMIMAGE_FILES) $(INTERNAL_USERIMAGES_DEPS) systemimage-crusher
 
+ifeq ($(BOARD_BUILD_SYSTEM_ROOT_IMAGE),true)
+    FULL_SYSTEMIMAGE_DEPS += $(INSTALLED_KERNEL_TARGET)
+endif
+
 # ASAN libraries in the system image - add dependency.
 ASAN_IN_SYSTEM_INSTALLED := $(TARGET_OUT)/asan.tar.bz2
 ifneq (,$(SANITIZE_TARGET))
