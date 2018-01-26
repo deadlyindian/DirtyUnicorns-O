@@ -344,7 +344,6 @@ void HwcDebug::dumpLayer(size_t layerIndex, hwc_layer_1_t hwLayers[])
         ALOGI("Display[%s] Layer[%zu] %s Skipping dump: Unsupported layer"
             " format %s for png encoder",
             mDisplayName, layerIndex, dumpLogStrPng, pixFormatStr);
-        delete tempSkBmp; // Calls SkBitmap::freePixels() internally.
     }
 #endif
     if (needDumpRaw && hnd->base) {
