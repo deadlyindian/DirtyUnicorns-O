@@ -7,6 +7,7 @@ LOCAL_CLANG := false
 
 LOCAL_MODULE                  := liboverlay
 LOCAL_MODULE_TAGS             := optional
+LOCAL_PROPRIETARY_MODULE      := true
 LOCAL_C_INCLUDES              := $(common_includes) $(kernel_includes)
 LOCAL_SHARED_LIBRARIES        := $(common_libs) libqdutils libmemalloc \
                                  libsync libdl
