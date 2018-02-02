@@ -476,26 +476,34 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   # script.Print("Target: %s" % target_fp)
 
   script.Print(" ")
-  script.Print("         || THANK YOU FOR FLASHING ||        ");
+  script.Print("           || THANK YOU FOR FLASHING ||           ");
+  script.Print("                ____  _      __                   ");
+  script.Print("               / __ \(_)____/ /___  __            ");
+  script.Print("              / / / / / ___/ __/ / / /            ");
+  script.Print("             / /_/ / / /  / /_/ /_/ /             ");
+  script.Print("       __  _/_____/_/_/   \__/\__, /              ");
+  script.Print("      / / / /___  (_)________//////_____  _____   ");
+  script.Print("     / / / / __ \/ / ___/ __ \/ ___/ __ \/ ___/   ");
+  script.Print("    / /_/ / / / / / /__/ /_/ / /  / / / (__  )    ");
+  script.Print("    \____/_/ /_/_/\___/\____/_/  /_/ /_/____/     ");
   script.Print(" ")
-  script.Print(" DDDDDDDDDDDDD         UUUUUUUU     UUUUUUUU ");
-  script.Print(" D::::::::::::DDD      U::::::U     U::::::U ");
-  script.Print(" D:::::::::::::::DD    U::::::U     U::::::U ");
-  script.Print(" DDD:::::DDDDD:::::D   UU:::::U     U:::::UU ");
-  script.Print("   D:::::D    D:::::D   U:::::U     U:::::U  ");
-  script.Print("   D:::::D     D:::::D  U:::::U     U:::::U  ");
-  script.Print("   D:::::D     D:::::D  U:::::U     U:::::U  ");
-  script.Print("   D:::::D     D:::::D  U:::::U     U:::::U  ");
-  script.Print("   D:::::D     D:::::D  U:::::U     U:::::U  ");
-  script.Print("   D:::::D     D:::::D  U:::::U     U:::::U  ");
-  script.Print("   D:::::D     D:::::D  U:::::U     U:::::U  ");
-  script.Print("   D:::::D    D:::::D   U::::::U   U::::::U  ");
-  script.Print(" DDD:::::DDDDD:::::D    U:::::::UUU:::::::U  ");
-  script.Print(" D:::::::::::::::DD      UU:::::::::::::UU   ");
-  script.Print(" D::::::::::::DDD          UU:::::::::UU     ");
-  script.Print(" DDDDDDDDDDDDD               UUUUUUUUU       ");
+  script.Print("        || Custom built for OnePlus One ||        ");
+  script.Print("          By Akshay M - DeadlyIndian@XDA          ");
   script.Print(" ")
-  script.Print("            ||| ANDROID 8.1.0 |||            ");
+
+  if GetBuildProp("ro.mod.version", OPTIONS.info_dict) is not None:
+    androidver = GetBuildProp("ro.build.version.release", OPTIONS.info_dict)
+    buildid = GetBuildProp("ro.mod.version", OPTIONS.info_dict)
+    buildday = GetBuildProp("ro.build.date", OPTIONS.info_dict)
+    securep = GetBuildProp("ro.build.version.security_patch", OPTIONS.info_dict)
+    device = GetBuildProp("ro.product.name", OPTIONS.info_dict)
+    codename = GetBuildProp("ro.vendor.product.device", OPTIONS.info_dict)
+    script.Print("==================================================");
+    script.Print("DU Version      : %s"%(buildid));
+    script.Print("Android Version : %s"%(androidver));
+    script.Print("Security Patch  : %s"%(securep));
+    script.Print("Build Date      : %s"%(buildday));
+    script.Print("==================================================");
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   device_specific.FullOTA_InstallBegin()
