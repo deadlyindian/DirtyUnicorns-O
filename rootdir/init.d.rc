@@ -3,7 +3,7 @@ on post-fs-data
     start sysinit
 
 # sysinit (/system/etc/init.d)
-service sysinit /system/vendor/bin/sysinit
+service sysinit /system/bin/sysinit
     user root
     oneshot
     disabled
